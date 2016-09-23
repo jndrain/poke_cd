@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokes</title>
+</head>
+<body>
+	<h1>Welcome, {{request.session.name}}!</h1>
+
+	<div id="poking_table">
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Alias</th>
+					<th>Email Address</th>
+					<th>Poke History</th>
+					<th>Action</th>
+				</tr>				
+			</thead>
+			<tbody>
+				<form action="/pokehist" method="POST">
+					{% csrf_token %}
+						<tr>	
+							<td>Oliver Rosales</td>
+							<td>Oliver</td>
+							<td>joliver@codingdojo.com</td>				
+							<td>{{request.session.oliver}} pokes</td>
+							<input type="hidden" name="poke" value="oliver">
+							<td><input type="submit" value="Poke"></td>
+						</tr>
+				</form>
+				<form action="/pokehist" method="POST">
+					{% csrf_token %}	
+						<tr>	
+							<td>Diane Sue Manlulu</td>
+							<td>Diana</td>
+							<td>dmanlulu@gmail.com</td>							
+							<td>{{request.session.diane}} pokes</td>
+							<input type="hidden" name="poke" value="diane">
+							<td><input type="submit" value="Poke"></td>
+						</tr>
+				</form>
+				<form action="/pokehist" method="POST">
+					{% csrf_token %}
+						<tr>	
+							<td>Jerry Tonel</td>
+							<td>j2</td>
+							<td>j2nel@yahoo.com</td>							
+							<td>{{request.session.jerry}} pokes</td>
+							<input type="hidden" name="poke" value="jerry">
+							<td><input type="submit" value="Poke"></td>
+						</tr>
+				</form>
+				<form action="/pokehist" method="POST">
+					{% csrf_token %}
+						<tr>	
+							<td>John Michael Smith</td>
+							<td>JM</td>
+							<td>smith@michael.com</td>							
+							<td>{{request.session.john}} pokes</td>
+							<input type="hidden" name="poke" value="john">
+							<td><input type="submit" value="Poke"></td>
+						</tr>
+				</form>
+
+				<form action="/pokehist" method="POST">
+					{% csrf_token %}
+						<tr>	
+							<td>Olivia Winters</td>
+							<td>Livy</td>
+							<td>livy@winters.com</td>							
+							<td>{{request.session.olivia}} pokes</td>
+							<input type="hidden" name="poke" value="olivia">
+							<td><input type="submit" value="Poke"></td>
+						</tr>
+				</form>
+			</tbody>
+		</table>
+	
+</body>
+</html>
